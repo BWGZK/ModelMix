@@ -46,12 +46,9 @@ python main.py
 
 # Requirements
 
-This code has been tested with  
-Python 3.8.5  
-torch  1.7.0  
-torchvision 0.8.0  
-gco-wrapper (https://github.com/Borda/pyGCO)  
-
+```
+pip install -r requirement.txt
+```
 
 
 If you have any problems, please feel free to contact us. Thanks for your attention.
