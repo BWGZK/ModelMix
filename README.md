@@ -19,7 +19,7 @@ Please also cite this paper if you are using ModelMix for your research.
 3. The scribble-annotated MSCMR dataset used for training could be directly downloaded from [MSCMR_dataset](https://github.com/BWGZK/CycleMix/tree/main/MSCMR_dataset). 
 4. The ACDC dataset with mask annotations can be downloaded from [ACDC](https://www.creatis.insa-lyon.fr/Challenge/acdc/) and the scribble annotations could be downloaded from [ACDC scribbles](https://vios-s.github.io/multiscale-adversarial-attention-gates/data).
 5. The MyoPS dataset can be downloaded in [MyoPS dataset](https://zmiclab.github.io/zxh/0/myops20/)
-6. The scribbles of MyoPS dataset have been released in [MyoPS scribbles]()
+6. The scribbles of MyoPS dataset have been released in [MyoPS scribbles](https://github.com/BWGZK/ModelMix/tree/main/MyoPS_scribbles)
 8.   Please organize the dataset as the following structure:
 ```
 XXX_dataset/
