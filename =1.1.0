@@ -1,0 +1,8 @@
+Processing /home/zhangke/.cache/pip/wheels/9c/84/ba/608e37b4b0abf89105f3e6e32282ea2e200f0d28b27bf46495/mmcv-1.2.5-py2.py3-none-any.whl
+Requirement already satisfied: yapf in /home/zhangke/anaconda3/lib/python3.8/site-packages (from mmcv) (0.30.0)
+Requirement already satisfied: pyyaml in /home/zhangke/anaconda3/lib/python3.8/site-packages (from mmcv) (5.3.1)
+Requirement already satisfied: Pillow in /home/zhangke/anaconda3/lib/python3.8/site-packages (from mmcv) (6.2.2)
+Requirement already satisfied: addict in /home/zhangke/anaconda3/lib/python3.8/site-packages (from mmcv) (2.4.0)
+Requirement already satisfied: numpy in /home/zhangke/anaconda3/lib/python3.8/site-packages (from mmcv) (1.18.5)
+Installing collected packages: mmcv
+Successfully installed mmcv-1.2.5
