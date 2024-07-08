@@ -1,20 +1,54 @@
-# whst
-Whole Heart Segmentation Transformer
+# ModelMix: A New Model-Mixup Strategy to Minimize Vicinal Risk across Tasks for Few-scribble based Cardiac Segmentation
+This project is developed for our MICCAI 2024 paper: [ModelMix: A New Model-Mixup Strategy to Minimize Vicinal Risk across Tasks for Few-scribble based Cardiac Segmentation](https://arxiv.org/abs/2406.13237).  For more information about ModelMix, please read the following paper:
 
-## Content
+<div align=center><img src="ModelMix.png" width="70%"></div>
 
-## Instruction
-- data: includes ```mscmr.py``` and ```transforms.py```
-	- ```mscmr.py``` is a script to deinfe the method of loading dataset
-	- ```transforms.py``` provides the methods of pre-processing data
-- logs: a folder to log training information
-- models: includes ```headtail.py```, ```position_encoding.py```, ```segmentation.py```, ```transformer.py```, and ```unet_model.py```
-	- ```headtail.py``` is a script to define the heads and tails of WHST
-	- ```position_encoding.py``` is a script to define the methods of building position encoding
-	- ```segmentation.py``` is a script to define the architecture of WHST
-	- ```transformer.py``` is a script to define the architecture of widely used transformer.
-	- ```unet_model.py``` provides the network architecture of a U-net
-- util: provides some functions in ```misc.py```
-- ```demo.sh``` provides the examples of training models, such as Unet and WHST
-- ```engine.py``` provides the methods of training and evaluating models
-- ```main.py``` is a script to define required arguments, load dataset, build models, train models, and evaluate models. 
+```
+@article{zhang2024modelmix,
+  title={ModelMix: A New Model-Mixup Strategy to Minimize Vicinal Risk across Tasks for Few-scribble based Cardiac Segmentation},
+  author={Zhang, Ke and Patel, Vishal M},
+  journal={arXiv preprint arXiv:2406.13237},
+  year={2024}
+}
+```
+Please also cite this paper if you are using CycleMix for your research.
+
+# Datasets
+1. The MSCMR dataset with mask annotations can be downloaded from [MSCMRseg](https://zmiclab.github.io/zxh/0/mscmrseg19/data.html).
+2. Our scribble annotations of MSCMRseg have been released in [MSCMR_scribbles](https://github.com/BWGZK/CycleMix/tree/main/MSCMR_scribbles). Please cite this paper if you use the scribbles for your research.
+3. The scribble-annotated MSCMR dataset used for training could be directly downloaded from [MSCMR_dataset](https://github.com/BWGZK/CycleMix/tree/main/MSCMR_dataset). 
+4. The ACDC dataset with mask annotations can be downloaded from [ACDC](https://www.creatis.insa-lyon.fr/Challenge/acdc/) and the scribble annotations could be downloaded from [ACDC scribbles](https://vios-s.github.io/multiscale-adversarial-attention-gates/data). Please organize the dataset as the following structure:
+```
+XXX_dataset/
+  -- TestSet/
+      --images/
+      --labels/
+  -- train/
+      --images/
+      --labels/
+  -- val/
+      --images/
+      --labels/
+```
+
+# Usage
+1. Set the "dataset" parameter in main.py, line 76, to the name of dataset, i.e., "MSCMR_dataset".
+2. Set the "output_dir" in main.py, line 79, as the path to save the checkpoints. 
+3. Download the dataset, for example, the [MSCMR_dataset](https://github.com/BWGZK/CycleMix/tree/main/MSCMR_dataset). Then, Set the dataset path in /data/mscmr.py, line 110, to your data path where the dataset is located in.
+4. Check your GPU devices and modify the "GPU_ids" parameter in main.py, line 83 and "CUDA_VISIBLE_DEVICES" in run.sh.
+5. Start to train by sh run.sh.
+```
+CUDA_LAUNCH_BLOCKING=1 CUDA_VISIBLE_DEVICES=5 nohup python main.py --mixup_alpha 0.5 --graph True --n_labels 3 --eta 0.2 --beta 1.2 --gamma 0.5 --neigh_size 4 --transport True --t_size 4 --t_eps 0.8 &
+```
+
+# Requirements
+
+This code has been tested with  
+Python 3.8.5  
+torch  1.7.0  
+torchvision 0.8.0  
+gco-wrapper (https://github.com/Borda/pyGCO)  
+
+
+
+If you have any problems, please feel free to contact us. Thanks for your attention.
